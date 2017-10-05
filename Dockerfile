@@ -23,6 +23,7 @@ RUN apk add  --update --no-cache \
     zip \
     curl \
     perl \
+    coreutils \
     bash \
     wget \
     unzip \
