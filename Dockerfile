@@ -24,6 +24,8 @@ RUN apt-get update && \
     software-properties-common \
     openjdk-8-jdk-headless \ 
     apt-utils \
+    git \
+    ssh \
     zip \
     curl \
     wget \
