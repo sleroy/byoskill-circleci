@@ -51,10 +51,12 @@ RUN apk add --update nodejs
 ENV GRADLE_HOME=/work/gradle-2.4
 
 # setup PATH
-ENV PATH=/work/google-cloud-sdk/bin:/root/.nodebrew/current/bin:$GRADLE_HOME/bin:$PATH 
 # setup openjdk environment 
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64 
-RUN echo "export PATH=/work/google-cloud-sdk/bin:/root/.nodebrew/current/bin:$GRADLE_HOME/bin:$PATH" >> /root/.bashrc
+ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/jre
+ENV PATH /work/google-cloud-sdk/bin:/root/.nodebrew/current/bin:$GRADLE_HOME/bin:$PATH 
+ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+#RUN echo "export PATH=/work/google-cloud-sdk/bin:/root/.nodebrew/current/bin:$GRADLE_HOME/bin:$PATH" >> /root/.bashrc
 RUN java -version
 RUN gradle -v
-
+RUN node -v
+RUN gcloud -v
